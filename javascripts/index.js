@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("filePath: ", filePath)
       let tile = document.createElement('img')
       tile.setAttribute("src", filePath)
+      tile.setAttribute("style", "width:65px;height:65px;position:absolute;")
+    // tile.setAttribute("style", "object-fit:contain;")
       e.target.appendChild(tile);
     //   e.target.appendChild(document.getElementById(data));
     })

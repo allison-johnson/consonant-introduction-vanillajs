@@ -50,18 +50,22 @@
 
 .column-center > #work-mat {
   height: 750px;
+  max-height: 750px;
   border: 2px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   column-gap: 0;
-  /* grid-gap: 5px; */
-  /* background-color: turquoise; */
+  row-gap: 0;
 }
 
 .column-center > #work-mat > div {
   /* width: 25px;
   height: 25px; */
   border: 1px solid rgba(0,0,0,0.2);
+  max-width: 72px;
+  max-height: 72px;
+  overflow: hidden;
+  /* position: absolute; */
 }
 
 .row:after {
