@@ -4,6 +4,14 @@ let getSymbols = () => document.getElementsByClassName('symbol');
 let getWorkMatSpaces = () => document.getElementsByClassName('workmat-space');
 
 document.addEventListener('DOMContentLoaded', function() {
+  //Add div's to workmat
+  let workMat = getWorkMat();
+  for (let i = 0; i < 72; i++) {
+    let space = document.createElement('div')
+    space.setAttribute("class", "workmat-space")
+    workMat.appendChild(space)
+  }
+  
   //Add dragstart handlers to all symbol pictures
   let allSymbols = getSymbols();
   for (let i = 0; i < allSymbols.length; i++) {
@@ -31,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("filePath: ", filePath)
       let tile = document.createElement('img')
       tile.setAttribute("src", filePath)
-      tile.setAttribute("style", "width:65px;height:65px;position:absolute;")
+      tile.setAttribute("style", "width:95px;height:95px;position:absolute;")
       e.target.appendChild(tile);
     })
   }
