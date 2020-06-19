@@ -66,7 +66,7 @@ body {
 .column-center > #work-mat > div {
   /* width: 25px;
   height: 25px; */
-  border: 1px solid rgba(50, 117, 117, 1);
+  border: 1px solid rgba(50, 117, 117, 0);
   max-width: 100px;
   max-height: 100px;
   overflow: hidden;
@@ -86,4 +86,8 @@ body {
 #work-mat {
   height: 100%;
   border: 2px solid black;
+}
+
+.tile {
+  cursor: move; 
 }

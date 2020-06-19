@@ -56,10 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
       //tile.setAttribute("draggable", false)
 
       e.target.appendChild(tile);
-
-      // tile.addEventListener("dragstart", function(e) {
-      //   tileDragStartHandler(e);
-      // })
     })
   }
 });
@@ -69,13 +65,6 @@ function dragStartHandler(e) {
   e.dataTransfer.setData("text/html", e.target.innerHTML)
   e.dataTransfer.effectAllowed = "move";
 }
-
-// function tileDragStartHandler(e) {
-//   console.log("drag started")
-//   console.log("e.target: ", e.target)
-//   e.dataTransfer.setData("text/html", e.target.innerHTML)
-//   e.dataTransfer.dropEffect = "move"
-// }
 
 window.onload = function() {
   document.onmousedown = startDrag;
@@ -97,11 +86,13 @@ function startDrag(e) {
   offsetY = e.clientY;
 
   if (!targ.style.left) {
-    targ.style.left = '0px'
+    targ.style.left = offsetX + 10 + 'px'
+    //targ.style.left = '270px'
   }
 
   if (!targ.style.top) {
-    targ.style.top = '0px'
+    targ.style.top = offsetY + 10 +'px' 
+    //targ.style.top = '80px'
   }
 
   coordX = parseInt(targ.style.left)
