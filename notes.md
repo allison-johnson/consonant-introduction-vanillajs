@@ -1,7 +1,7 @@
 *To do*
-[x] Make an invisible grid inside of work mat
-    - Give each grid item an empty div
-    - Make each grid item a drop zone
-    - When dropped inside a grid item, append an <img> child to the <div>
+[] Symbols can be dragged around grid
+
+[] Auto-size symbols to size of grid (rather than hard coding 100px by 100px)
 
 [] User can remove symbols from center grid
+
