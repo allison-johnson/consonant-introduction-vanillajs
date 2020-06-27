@@ -35,6 +35,7 @@ body {
 .column-left > #mouth-pics > div {
   width: 100px;
   height: 100px;
+  background-color: black;
 }
 
 #mouth-pics > div > img {
@@ -44,12 +45,13 @@ body {
 .column-right > #symbols {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px; 
 }
 
 .column-right > #symbols > div {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
+  background-color: black;
 }
 
 .column-center > #work-mat {
@@ -66,7 +68,7 @@ body {
 .column-center > #work-mat > div {
   /* width: 25px;
   height: 25px; */
-  border: 1px solid rgba(50, 117, 117, 0);
+  border: 1px solid rgba(50, 117, 117, 1);
   max-width: 100px;
   max-height: 100px;
   overflow: hidden;
@@ -81,13 +83,47 @@ body {
 
 .column-header {
   text-align: center;
+  display: inline-block;
+}
+
+button {
+  float: right;
 }
 
 #work-mat {
   height: 100%;
   border: 2px solid black;
+  overflow: hidden; 
 }
 
 .tile {
   cursor: move; 
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.blank {
+  opacity: 0;
+}
+
+#clear-button {
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center; 
+  margin: auto; 
+}
+
+#trash-button {
+  width: 70px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+.tile:hover {
+  opacity: 0.5;
 }

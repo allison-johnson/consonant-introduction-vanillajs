@@ -1,7 +1,10 @@
 //DOM Getters
 let getWorkMat = () => document.getElementById('work-mat');
 let getSymbols = () => document.getElementsByClassName('symbol');
+let getMouthPics = () => document.getElementsByClassName('mouth-pic');
 let getWorkMatSpaces = () => document.getElementsByClassName('workmat-space');
+let getClearButton = () => document.getElementById('clear-button');
+let getTrashButton = () => document.getElementById('trash-button');
 
 document.addEventListener('DOMContentLoaded', function() {
   console.log("all symbols: ", getSymbols())
@@ -14,14 +17,27 @@ document.addEventListener('DOMContentLoaded', function() {
     workMat.appendChild(space)
   }
   
-  //Add dragstart handlers to all symbol pictures
+  //Add dragstart handlers to all symbol pictures (actually not necessary, they're draggable by default?)
+  //Add ability to hide to all symbol pictures
   let allSymbols = getSymbols();
   for (let i = 0; i < allSymbols.length; i++) {
-    allSymbols[i].addEventListener("dragstart", function(e) {
-      console.log("adding event listener")
-      dragStartHandler(e);
+    // allSymbols[i].addEventListener("dragstart", function(e) {
+    //   console.log("adding event listener")
+    //   dragStartHandler(e);
+    // })
+
+    allSymbols[i].addEventListener("click", function(e) {
+      clickHandler(e);
     })
   }//for
+
+  //Add ability to hide to all mouth pics
+  let allMouthPics = getMouthPics();
+  for (let i = 0; i < allMouthPics.length; i++) {
+    allMouthPics[i].addEventListener("click", function(e) {
+      clickHandler(e);
+    })
+  }
 
   //Define drop zones
   let workMatSpaces = getWorkMatSpaces();
@@ -58,7 +74,24 @@ document.addEventListener('DOMContentLoaded', function() {
       e.target.appendChild(tile);
     })
   }
+
+  //Add functionality to clear work mat button
+  let clearButton = getClearButton();
+  clearButton.addEventListener("click", function(e) {
+    //Clear child elements from all divs in grid
+    let workMatSpaces = getWorkMatSpaces();
+    for (let i = 0; i < workMatSpaces.length; i++) {
+      workMatSpaces[i].innerHTML = '';
+    }
+  })
+
+  //Add functionality to trash button
+  
 });
+
+function clickHandler(e) {
+  e.target.classList.toggle("hidden")
+}
 
 function dragStartHandler(e) {
   console.log("drag started")
@@ -87,12 +120,10 @@ function startDrag(e) {
 
   if (!targ.style.left) {
     targ.style.left = offsetX + 10 + 'px'
-    //targ.style.left = '270px'
   }
 
   if (!targ.style.top) {
     targ.style.top = offsetY + 10 +'px' 
-    //targ.style.top = '80px'
   }
 
   coordX = parseInt(targ.style.left)
@@ -119,5 +150,40 @@ function dragDiv(e) {
   return false 
 }
 
+// WZoom.create('#work-mat', {
+//   type: 'html',
+//   width: 900,
+//   height: 800
+// });
+
+// var defaults = {
+//   type: 'html',
+//   width: '900px',
+//   height: '800px',
+//   dragScrollable: true,
+//   dragScrollableOptions: {
+//     smoothExtinction: false,
+//     onGrab: null,
+//     onMove: null,
+//     onDrop: null 
+//   },
+//   maxScale: 1,
+//   speed: 10
+// }
+
+// const wzoom = WZoom.create('html')
+// document.querySelector('[data-zoom-up]').addEventListener('click', () => {
+//   wzoom.zoomUp();
+// })
+
+// document.querySelector('[data-zoom-down]').addEventListener('click', () => {
+//   wzoom.zoomDown();
+// })
+
+// window.addEventListener('resize', () => {
+//   wzoom.prepare();
+// })
 
 
+// var elt = document.querySelector('#mouth-pics')
+// panzoom(elt)
