@@ -68,7 +68,7 @@ body {
 .column-center > #work-mat > div {
   /* width: 25px;
   height: 25px; */
-  border: 1px solid rgba(50, 117, 117, 1);
+  border: 1px solid rgba(50, 117, 117, 0);
   max-width: 100px;
   max-height: 100px;
   overflow: hidden;
@@ -116,14 +116,14 @@ button {
   margin: auto; 
 }
 
-#trash-button {
+/* #trash-button {
   width: 70px;
   height: 30px;
   font-size: 20px;
   text-align: center;
   margin: auto;
-}
+} */
 
-.tile:hover {
+/* .tile:hover {
   opacity: 0.5;
-}
+} */

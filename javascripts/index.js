@@ -71,7 +71,24 @@ document.addEventListener('DOMContentLoaded', function() {
       tile.setAttribute("style", "width:95px;height:95px;position:absolute;")
       //tile.setAttribute("draggable", false)
 
-      e.target.appendChild(tile);
+      // let btn = document.createElement('button')
+      // btn.className = "delete-button"
+      // btn.innerText = "X"
+      // btn.setAttribute("position", "relative")
+
+      // let div = document.createElement("div")
+      // div.className = "tile-container"
+      // div.setAttribute("position", "relative")
+
+      e.target.appendChild(tile)
+      tile.addEventListener("dblclick", function(e){
+        console.log("double clicked!")
+        console.log("e.target: ", e.target)
+        e.target.remove();
+      })
+      // e.target.appendChild(div);
+      // div.appendChild(tile)
+      // div.appendChild(btn);
     })
   }
 
@@ -85,8 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })
 
-  //Add functionality to trash button
-  
 });
 
 function clickHandler(e) {
